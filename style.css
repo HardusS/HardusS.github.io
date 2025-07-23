@@ -1,3 +1,12 @@
+:root {
+  --bg-dark: #121a26;
+  --text-light: #e0e6f0;
+  --accent-blue: #00aaff;
+  --nav-bg: #1c2a42;
+  --card-bg: #1f324f;
+  --shadow-color: rgba(0, 170, 255, 0.25);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,76 +15,196 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   line-height: 1.6;
-  color: #111;
-  background-color: #fff;
   scroll-behavior: smooth;
-  transition: background-color 0.3s, color 0.3s;
   padding-top: 80px;
 }
 
-body.dark {
-  background-color: #111;
-  color: #eee;
-}
-
 a {
-  color: #0077cc;
+  color: var(--accent-blue);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  color: #00ccff;
 }
 
 .navbar {
   position: sticky;
   top: 0;
-  background: #f9f9f9;
-  padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-body.dark .navbar {
-  background: #222;
+  background-color: var(--nav-bg);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar .container {
   max-width: 1000px;
-  margin: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav a, #darkModeToggle {
-  margin-left: 1rem;
+.navbar h1 {
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-blue);
+  font-size: 1.8rem;
+}
+
+nav a {
+  margin-left: 2rem;
   font-weight: 600;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: inherit;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: var(--accent-blue);
+  color: var(--bg-dark);
+  outline: none;
+}
+
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
 }
 
 section {
-  padding: 4rem 1rem;
-  max-width: 800px;
-  margin: auto;
+  margin-bottom: 4rem;
 }
 
-ul {
+h2 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--accent-blue);
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--accent-blue);
+  padding-bottom: 0.25rem;
+  max-width: fit-content;
+}
+
+/* About section with picture */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.7);
+  border: 3px solid var(--accent-blue);
+  flex-shrink: 0;
+}
+
+@media (max-width: 500px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-pic {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Projects list as cards */
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   list-style: none;
   padding-left: 0;
 }
 
-footer {
-  text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
+#projects li {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+#projects li:hover,
+#projects li:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px var(--accent-blue);
+  outline: none;
+}
+
+#projects h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent-blue);
+  letter-spacing: 0.05em;
+}
+
+#projects p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* Skills section styling */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.skills-list li {
+  background-color: var(--accent-blue);
+  color: var(--bg-dark);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(0, 170, 255, 0.7);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.skills-list li:hover {
+  background-color: #0088cc;
+}
+
+/* Resume & Contact */
+section#resume p,
+section#contact p {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  border-top: 1px solid var(--card-bg);
+}
+
+/* Fade-in animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);

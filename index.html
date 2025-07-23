@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hardus Stapelberg | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -11,13 +11,13 @@
 <body>
   <header class="navbar">
     <div class="container">
-      <h1>Your Name</h1>
+      <h1>Hardus Stapelberg</h1>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
-        <button id="darkModeToggle">🌓</button>
       </nav>
     </div>
   </header>
@@ -25,7 +25,10 @@
   <main>
     <section id="about" class="fade-in">
       <h2>About Me</h2>
-      <p>I’m a passionate developer with interests in full-stack development and software engineering. This portfolio showcases my skills, experience, and projects.</p>
+      <div class="about-content">
+        <img src="assets/profile.jpg" alt="Hardus Stapelberg" class="profile-pic" />
+        <p>I’m a passionate developer with interests in full-stack development and software engineering. This portfolio showcases my skills, experience, and projects.</p>
+      </div>
     </section>
 
     <section id="projects" class="fade-in">
@@ -34,37 +37,43 @@
         <li>
           <h3>Virtual CV Website</h3>
           <p>A portfolio site built using HTML, CSS, and GitHub Pages.</p>
-          <a href="https://github.com/your-username/your-repo">GitHub Repo</a>
+          <a href="https://github.com/your-username/your-repo" target="_blank" rel="noopener">GitHub Repo</a>
         </li>
         <li>
           <h3>Full-Stack Tuck Shop App</h3>
           <p>Developed with C#/.NET backend and React frontend.</p>
-          <a href="https://github.com/your-username/tuck-shop-app">GitHub Repo</a>
+          <a href="https://github.com/your-username/tuck-shop-app" target="_blank" rel="noopener">GitHub Repo</a>
         </li>
+      </ul>
+    </section>
+
+    <section id="skills" class="fade-in">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>JavaScript (ES6+)</li>
+        <li>React & Redux</li>
+        <li>C# / .NET Core</li>
+        <li>HTML5 & CSS3</li>
+        <li>Git & GitHub</li>
       </ul>
     </section>
 
     <section id="resume" class="fade-in">
       <h2>Resume</h2>
-      <p>Download my <a href="assets/resume.pdf" target="_blank">resume</a>.</p>
+      <p>Download my <a href="assets/resume.pdf" target="_blank" rel="noopener">resume</a>.</p>
     </section>
 
     <section id="contact" class="fade-in">
       <h2>Contact Me</h2>
-      <p>Email me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p>Email me at <a href="mailto:hardus@example.com">hardus@example.com</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>© 2025 Hardus Stapelberg</p>
   </footer>
 
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -72,7 +81,6 @@
         }
       });
     });
-
     document.querySelectorAll('.fade-in').forEach((section) => {
       observer.observe(section);
     });
