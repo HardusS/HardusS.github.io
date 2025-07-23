@@ -2,73 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Name | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="hero">
     <div class="container">
-      <img src="assets/profile.jpg" alt="Profile Picture" class="profile-pic" />
-      <h1>Your Name</h1>
-      <p>Aspiring Software Developer | Lifelong Learner</p>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <h1>Hello, I’m <span>Your Name</span></h1>
+      <p>Aspiring Software Developer | Problem Solver | Tech Enthusiast</p>
+      <a href="#projects" class="btn">See My Work</a>
     </div>
   </header>
 
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>
-      Hello! I’m Your Name, a passionate software developer currently completing my studies. I enjoy building web applications and exploring full-stack technologies.
-    </p>
-  </section>
-
-  <section id="projects" class="container">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Full-Stack Tuckshop Web App</h3>
-      <p>
-        Built with React and .NET. Allows users to order, track, and manage items.
-      </p>
-      <a href="https://github.com/yourusername/tuckshop-app" target="_blank">GitHub Repo</a>
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I’m a passionate software developer with an interest in building impactful applications. I enjoy working with modern web technologies and continuously learning new tools and frameworks.</p>
     </div>
   </section>
 
-  <section id="skills" class="container">
-    <h2>Skills</h2>
-    <ul>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>C# / .NET</li>
-      <li>SQL</li>
-      <li>Git & GitHub</li>
-    </ul>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>C#</li>
+        <li>React</li>
+        <li>.NET</li>
+        <li>SQL</li>
+        <li>Git</li>
+      </ul>
+    </div>
   </section>
 
-  <section id="cv" class="container">
-    <h2>Resume / CV</h2>
-    <p><a href="assets/resume.pdf" target="_blank">Download My CV (PDF)</a></p>
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Full Stack Tuckshop App</h3>
+          <p>A CRUD-based tuckshop management app with a .NET backend and React frontend. Includes product listings, order history, and authentication.</p>
+          <a href="https://github.com/yourusername/tuckshop-app" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Virtual CV Website</h3>
+          <p>This website! A responsive and sleek portfolio built using HTML, CSS, and GitHub Pages.</p>
+          <a href="https://github.com/yourusername/your-username.github.io" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>
-      LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a>
-    </p>
-    <p>
-      GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a>
-    </p>
+  <section id="resume" class="section">
+    <div class="container">
+      <h2>Resume</h2>
+      <a class="btn" href="assets/resume.pdf" download>Download Resume</a>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Email me at <a href="mailto:youremail@example.com">youremail@example.com</a> or connect with me below.</p>
+      <div class="socials">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
   </footer>
 </body>
 </html>
