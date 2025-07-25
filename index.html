@@ -12,6 +12,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <h1>Hardus Stapelberg</h1>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -21,7 +22,6 @@
       </div>
     </div>
   </nav>
-  
 
   <main>
     <section class="hero fade-in">
@@ -136,7 +136,7 @@
         <p class="section-subtitle">Download my complete professional profile</p>
       </div>
       <div class="contact-container">
-        <a href="assets/resume.pdf" target="_blank" rel="noopener" class="cta-button">
+        <a href="assets/Hardus CV.pdf" target="_blank" rel="noopener" class="cta-button">
           <span>Download Resume</span>
           <span>📄</span>
         </a>
@@ -185,7 +185,7 @@
       }
     });
 
-    // Intersection observer for fade/slide animations
+    // Intersection observer for animations
     const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -194,7 +194,7 @@
         }
       });
     }, observerOptions);
-    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => observer.observe(el));
 
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
